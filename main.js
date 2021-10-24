@@ -43,3 +43,16 @@ function getGithubProfileInfos() {
 }
 
 getGithubProfileInfos()
+
+/*Troca a imagem do background ao clicar*/
+const bgColors = {
+  yellow: "url('images/bg-card-desktop-yellow')",
+  gray: "url('images/bg-card-desktop-yellow')",
+  purple: "url('images/bg-card-desktop-yellog')"
+}
+
+function changeBg() {
+  document.container.style.background = `${bgColors}`
+}
+
+changeBg()

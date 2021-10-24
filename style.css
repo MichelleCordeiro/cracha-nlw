@@ -19,32 +19,49 @@ body {
   height: 100%;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased; /* C smoothing a fonte fica uma pouco mais suave*/
+
+  position: relative;
 }
 
 body {
   display: grid;
   place-items: center;
+  background: #121214;
 }
 
 main {
-  background: url(images/background.svg);
-  width: 375px;
-  height: 812px;
+  grid-column: 1/5;
+}
+
+#badge {
+  display: flex;
+  justify-content: center;
+}
+#cord {
+  height: 15%;
+  width: 4rem;
+  background: linear-gradient(161.24deg, #ff1f9c -15.25%, #801eff 111.89%);
+  position: absolute;
+  z-index: 10;
+}
+#hole {
+  height: 0.5rem;
+  width: 5rem;
+  background: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 6.6rem;
+  z-index: 5;
 }
 
 .container {
-  max-width: 250px;
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
-
   /* é assim q chama uma variável*/
   color: var(--grey);
 }
 
 .avatar {
   width: 10rem;
-  margin: 8rem auto 0;
+  margin: 2rem auto 0;
   position: relative;
 }
 
@@ -66,6 +83,11 @@ h1 {
   margin-top: 1.5rem;
 }
 
+h3 {
+  font-size: 1rem;
+  color: rgb(243, 230, 230);
+}
+
 a {
   color: var(--grey);
   text-decoration: none;
@@ -81,10 +103,94 @@ p {
 }
 
 ul {
-  margin-top: 4rem;
+  margin-top: 2rem;
   list-style: none;
   padding: 0;
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+}
+
+#custom {
+  grid-column: 5;
+  padding-right: 3rem;
+}
+
+#bgCustom {
+  display: inline-flex;
+}
+
+button {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  margin: 1rem;
+  border-radius: 50%;
+}
+
+button:nth-child(1) {
+  background: linear-gradient(90deg, #f69d0f, #fff201);
+}
+button:nth-child(2) {
+  background: linear-gradient(90deg, #616161, #b4b4b4);
+}
+button:nth-child(3) {
+  background: linear-gradient(90deg, #a90ff6, hsl(307, 93%, 73%));
+}
+
+/* estilos versão mobile */
+@media screen and (max-width: 767px) {
+  body {
+    background: url(images/bg-mobile.svg) no-repeat 50% 34% / cover;
+  }
+
+  main {
+    grid-column: 1;
+}
+
+  #cord {
+    display: none;
+  }
+
+  #hole {
+    display: none;
+  }
+
+  main {
+    height: 100vh;
+  }
+
+  .container {
+    width: 80vw;
+    height: 80vh;
+  }
+
+  .avatar {
+    margin-top: 8rem;
+  }
+  #custom {
+  grid-column: 1;
+}
+}
+
+/* estilos versão tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    background: url(images/bg-mobile.svg) no-repeat 50% 33% / cover;
+    width: 40vw;
+    height: 75vh;
+    margin: 3rem 0;
+    padding: 4rem 2rem 0rem 2rem;
+  }
+}
+
+/* estilos versão desktop */
+@media screen and (min-width: 1024px) {
+  .container {
+    background: url(images/bg-mobile.svg) no-repeat 50% 33% / cover;
+    width: 30vw;
+    height: 75vh;
+    margin: 3rem 0;
+    padding: 4rem 3rem 0rem 3rem;
+  }
 }
