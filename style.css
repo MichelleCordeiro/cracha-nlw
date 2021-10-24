@@ -1,0 +1,90 @@
+/* Seletor universal */
+* {
+  margin: 0;
+}
+
+html,
+body {
+  /* --nome é assim q se declara variável e lá em container tem a chamada diferente dele
+  CTRL+C  background: hsla(240, 9%, 89%, 1);   tira a palavra background e o ,1  
+  HSLA >  H = cor  qdo desliza p cima e baixo a última barra vertical a direita, 
+          S = saturation   qdo desliza p direita e esq o cursor no quadro,
+          L = lightness   qdo desliza p cima e baixo o cursor no quadro e 
+          A = transparência  qdo desliza p cima e baixo a 1a barra vertical a direita,  
+          */
+
+  --grey: hsla(240, 9%, 89%);
+  --black: hsl(240, 6%, 13%);
+
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased; /* C smoothing a fonte fica uma pouco mais suave*/
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+main {
+  background: url(images/background.svg);
+  width: 375px;
+  height: 812px;
+}
+
+.container {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  /* é assim q chama uma variável*/
+  color: var(--grey);
+}
+
+.avatar {
+  width: 10rem;
+  margin: 8rem auto 0;
+  position: relative;
+}
+
+.avatar span {
+  position: absolute;
+  top: -15px;
+  z-index: 1;
+}
+
+.avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+a {
+  color: var(--grey);
+  text-decoration: none;
+  margin-top: 0.25rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin-top: 2rem;
+}
+
+ul {
+  margin-top: 4rem;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
